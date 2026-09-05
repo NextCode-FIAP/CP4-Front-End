@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    }
     
 :root {
     --background-color-primary: #121212;
@@ -20,6 +21,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    transition: all 0.3s ease;
 }
 
 
@@ -27,7 +29,7 @@
 .banner {
     background-color: var(--background-color-primary);
     width: 100%;
-    padding: 40px 0;
+    padding: 70px 0;
 }
 
 .hero_container {
@@ -52,6 +54,7 @@
     max-width: 1140px;
     object-fit: cover;
     border-radius: 15px;
+    transition: all 0.3s ease;
 }
 
 .galery_1 {
@@ -90,6 +93,7 @@
 
 .button {
     display: grid;
+    grid-area: e;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -107,6 +111,7 @@
     align-self: center;
     margin: 20%;
     padding: 0 80px;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
@@ -133,11 +138,11 @@
 
 .sea {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 5fr));
-    grid-template-rows: repeat(2, 300px);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 400px);
     background-color: var(--background-color-secundary);
     gap: 15px;
-    padding: 70px;
+    padding: 0 40px;
 
 }
 
@@ -153,15 +158,34 @@
     grid-row: 1/3;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
     .hero_container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
-            "a a"
-            "b c"
-            "d e";
+            "a a a"
+            "b c d"
+            "e e e";
         padding: 0 20px;
     }
+.button {
+        justify-items: start;
+        text-align: left;
+    }
+    
+    .btn {
+        display: grid;
+        width: 25%;
+        height: 120%;
+        
+        justify-self: start;
+        margin: 20px 0 0 0;
+    }
+    .sea {
+        margin-top: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-rows: repeat(2, 300px);
+    }
+    
 }
 
 @media (max-width: 600px) {
@@ -169,18 +193,43 @@
         grid-template-columns: 1fr;
         grid-template-areas:
             "a"
+            "e"
             "b"
             "c"
-            "d"
-            "e";
+            "d";
+            
+    }
+
+    .hero {
+        width: 95%;
+        max-width: 100%;
+        margin: 15px ;
+        object-fit: cover;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+    }
+    .galery_1, .galery_2, .galery_3 {
+        display: grid;
+        justify-self: center;
+        align-items: center;
+        align-self: center;
+        width: 65%;
+
+    }
+
+    .btn {
+        width: 300px;
+        height: 70px;
+        padding: 0 30px;
+        justify-self: center;
+        align-self: center;
+        align-items: center;
+
     }
 
     .sea {
         grid-template-columns: 1fr;
         padding: 20px;
-    }
-
-    .mar_3 {
-        grid-row: span 1;
+        grid-template-rows: repeat(2, 300px);
     }
 }
